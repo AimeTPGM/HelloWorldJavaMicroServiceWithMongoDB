@@ -6,7 +6,7 @@ In realworld, one action of user may call many many microservices, for example, 
 
 So, I hope this project will be helpful for people who is getting start to build a micro service by Spring and use MongoDB
 
-and anybody who have try this project will be able to apply or start their own micro service projects by their own :)
+and anybody who have tried this project will be able to apply or start their own micro service projects by their own :)
 
 Let's learn together!
 
