@@ -1,3 +1,15 @@
+# BIG NOTE
+
+this is an example of "One Micro Service"
+
+In realworld, one action of user may call many many microservices, for example, Purchasing things may call "Product service", "Customer Service", "Payment Service" and "BlaBlaBla Service" (depends on how small it have been designed and how many services needed to be called to complete the action) – go to the bottom of this page for more detail and read my slideshare
+
+So, I hope this project will be helpful for people who is getting start to build a micro service by Spring and use MongoDB
+
+and anybody who have try this project will be able to apply or start their own micro service projects by their own :)
+
+Let's learn together!
+
 # "Hello World" Micro Service & MongoDB
 
 Language: Java
@@ -95,17 +107,11 @@ you may try to add more
 
 ```
 http://localhost:8085/newName?name=Aime
-
 http://localhost:8085/newName?name=Aime
-
 http://localhost:8085/newName?name=Aime
-
 http://localhost:8085/newName?name=Aime
-
 http://localhost:8085/newName?name=Aime
-
 http://localhost:8085/newName?name=Alpha
-
 http://localhost:8085/newName?name=Beta
 ```
 
