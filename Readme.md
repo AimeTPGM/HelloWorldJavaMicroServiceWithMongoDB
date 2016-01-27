@@ -50,7 +50,7 @@ then open this link in the web browser
 
 > http://localhost:8085/newName?name=whatever
 
-then 'whatever' name will be stored in your MongoDB; database name: hello
+then 'whatever' name will be stored in your MongoDB; database name: helloworld, collection: name
 
 want to see the query of all record?
 
