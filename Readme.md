@@ -44,7 +44,7 @@ Open STS and go to
 
 If the port isn't fixed, it will run on default port 8080
 
-To fix the port, go to "run configuration" and add property server.port -> value = port_number, for example server.port 8081 
+To fix the port, go to "run configuration" and add property server.port -> value = port_number, for example server.port 8085 
 
 then open this link in the web browser
 
