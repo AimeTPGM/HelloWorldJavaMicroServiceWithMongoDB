@@ -88,7 +88,7 @@ http://localhost:8085/newName?name=James
 it will show
 
 ```
-added new name: Aime
+added new name: James
 ```
 
 you may try to add more
@@ -131,15 +131,10 @@ the return will be
 
 ```
 5 people(s) named Aime
-
 Hello, Aime!
-
 Hello, Aime!
-
 Hello, Aime!
-
 Hello, Aime!
-
 Hello, Aime!
 ```
 
