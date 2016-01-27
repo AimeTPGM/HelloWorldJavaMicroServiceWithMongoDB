@@ -81,15 +81,20 @@ changeNameById   | id=String, changedName=String | query a record by [id] and ch
 
 if you try
 
-> http://localhost:8085/newName?name=James
+```
+http://localhost:8085/newName?name=James
+```
 
 it will show
 
-> added new name: Aime
+```
+added new name: Aime
+```
 
 you may try to add more
 
-> http://localhost:8085/newName?name=Aime
+```
+http://localhost:8085/newName?name=Aime
 
 http://localhost:8085/newName?name=Aime
 
@@ -102,37 +107,55 @@ http://localhost:8085/newName?name=Aime
 http://localhost:8085/newName?name=Alpha
 
 http://localhost:8085/newName?name=Beta
+```
 
 then
 
-> http://localhost:8085/getAllData
+```
+http://localhost:8085/getAllData
+```
 
 it will show something like this
 
-> [{"id":"56a8e0efd4c6b7ab47555ece","name":"James"},{"id":"56a8e10fd4c6b7ab47555ecf","name":"Aime"},{"id":"56a8e14ed4c6b7ab47555ed0","name":"Aime"},{"id":"56a8e150d4c6b7ab47555ed1","name":"Aime"},{"id":"56a8e151d4c6b7ab47555ed2","name":"Aime"},{"id":"56a8e152d4c6b7ab47555ed3","name":"Aime"},{"id":"56a8e7e2d4c68879aea3e96d","name":"Alpha"},{"id":"56a8e7e7d4c68879aea3e96e","name":"Beta"}]
+```
+[{"id":"56a8e0efd4c6b7ab47555ece","name":"James"},{"id":"56a8e10fd4c6b7ab47555ecf","name":"Aime"},{"id":"56a8e14ed4c6b7ab47555ed0","name":"Aime"},{"id":"56a8e150d4c6b7ab47555ed1","name":"Aime"},{"id":"56a8e151d4c6b7ab47555ed2","name":"Aime"},{"id":"56a8e152d4c6b7ab47555ed3","name":"Aime"},{"id":"56a8e7e2d4c68879aea3e96d","name":"Alpha"},{"id":"56a8e7e7d4c68879aea3e96e","name":"Beta"}]
+```
 
 Oh! how many "Aime" we have!? check!
 
-> http://localhost:8085/helloToAllByName?name=Aime
+```
+http://localhost:8085/helloToAllByName?name=Aime
+```
 
 the return will be
 
-> 5 people(s) named Aime
+```
+5 people(s) named Aime
+
 Hello, Aime!
+
 Hello, Aime!
+
 Hello, Aime!
+
 Hello, Aime!
+
 Hello, Aime!
+```
 
 Hmm.. want to change one of Aime? try!
 
-> http://localhost:8085/changeNameById?id=56a8e14ed4c6b7ab47555ed0&changedName=whatever
+```
+http://localhost:8085/changeNameById?id=56a8e14ed4c6b7ab47555ed0&changedName=whatever
+```
 
 ha.. now id:56a8e14ed4c6b7ab47555ed0 will change the name to "whatever"
 
 or want to remove one people?
 
-> http://localhost:8085/removeById?id=56a8e7e7d4c68879aea3e96e
+```
+http://localhost:8085/removeById?id=56a8e7e7d4c68879aea3e96e
+```
 
 Byebye Beta ...
 
