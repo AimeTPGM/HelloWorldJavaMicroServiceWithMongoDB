@@ -30,17 +30,23 @@ open Terminal (or whatever to use command line)
 
 open the connection of MongoDB for this project
 
-> mongod --dbpath ~/your/directory/to/this/project/HelloWorldMicroServiceWithMongoDB/data
+```
+mongod --dbpath ~/your/directory/to/this/project/HelloWorldMicroServiceWithMongoDB/data
+```
 
 then it will build something needed in ~/data folder for MongoDB and MongDB will be ready at port 27017 (default)
 
 NOTE: if you need to change to the other port, use the following command line
 
-> mongod --dbpath ~/your/directory/to/this/project/HelloWorldMicroServiceWithMongoDB/data --port [PORT_NUMBER]
+```
+mongod --dbpath ~/your/directory/to/this/project/HelloWorldMicroServiceWithMongoDB/data --port [PORT_NUMBER]
+```
 
 example, 
 
-> mongod --dbpath ~/your/directory/to/this/project/HelloWorldMicroServiceWithMongoDB/data --port 27018
+```
+mongod --dbpath ~/your/directory/to/this/project/HelloWorldMicroServiceWithMongoDB/data --port 27018
+```
 
 ### STS
 
@@ -52,7 +58,9 @@ https://spring.io
 
 Open STS and go to
 
-> File -> Import -> General -> Existing Projects into work space -> [Select the directory and there it is :D ]
+```
+File -> Import -> General -> Existing Projects into work space -> [Select the directory and there it is :D ]
+```
 
 If the port isn't fixed, it will run on default port 8080
 
@@ -60,13 +68,17 @@ To fix the port, go to "run configuration" and add property server.port -> value
 
 then open this link in the web browser
 
-> http://localhost:8085/newName?name=whatever
+```
+http://localhost:8085/newName?name=whatever
+```
 
 then 'whatever' name will be stored in your MongoDB; database name: helloworld, collection: name
 
 want to see the query of all record?
 
-> http://localhost:8085/getAllData
+```
+ http://localhost:8085/getAllData
+```
 
 there it is :)
 
