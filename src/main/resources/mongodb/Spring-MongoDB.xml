@@ -13,7 +13,7 @@
 <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
     <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
 </bean>
-<bean id="helloWorldDAO" class="mongodb.dao.HelloWorldDAOImpl">
+<bean id="helloWorldDAO" class="database.mongodb.HelloWorldDAOImpl">
     <constructor-arg name="mongoOps" ref="mongoTemplate"/>
 </bean>
 </beans>

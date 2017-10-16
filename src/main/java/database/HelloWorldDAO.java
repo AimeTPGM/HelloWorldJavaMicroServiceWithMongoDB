@@ -1,4 +1,4 @@
-package mongodb.dao;
+package database;
 
 import java.util.List;
 

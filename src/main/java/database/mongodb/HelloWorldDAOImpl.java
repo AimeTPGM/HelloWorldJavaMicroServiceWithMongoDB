@@ -1,4 +1,4 @@
-package mongodb.dao;
+package database.mongodb;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.data.mongodb.core.query.Update;
 import com.mongodb.MongoClient;
 import com.mongodb.WriteResult;
 
+import database.HelloWorldDAO;
 import main.model.HelloWorld;
-import mongodb.main.MongoDBMain;
 
 public class HelloWorldDAOImpl implements HelloWorldDAO{
 	private MongoOperations mongoOps;
