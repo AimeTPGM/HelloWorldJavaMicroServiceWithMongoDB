@@ -10,19 +10,23 @@ and anybody who have tried this project will be able to apply or start their own
 
 Let's learn together!
 
-# "Hello World" Micro Service & MongoDB
+# "Hello, World" Micro Service & MongoDB
 
 Language: Java
 
 Framework: Spring
 
-Tool: STS, MongoDB
+Tool: STS
+
+Database: MongoDB
+
+Dependency Mangement Tool: Maven
 
 this project is extended from https://github.com/AimePGM/HelloWorldJavaMicroService
 
-## How to run
+# How to run on Sprint Tool Suite
 
-### MongoDB
+## MongoDB
 
 download and install: https://www.mongodb.org/
 
@@ -48,7 +52,7 @@ example,
 mongod --dbpath ~/your/directory/to/this/project/HelloWorldMicroServiceWithMongoDB/data --port 27018
 ```
 
-### STS
+## STS
 
 Run it on Spring Tool Suite (STS) is the easiest way to go
 
@@ -90,15 +94,14 @@ I planned to write a blog entry to explain about this project in detail but kind
 
 Anyway, for saving your time, try...
 
-Request name     | parameter(s) | Description
------------------|--------------|-------------------------------
-newName          | name=String  				 | add new [name] to your database
-hello            | id=String    				 | query by id from db and return "Hello, [name]!"
-helloToAll       |             					 | query all records and says "Hello, [name]!"
-helloToAllByName | name=String  				 | query all records those have "name"=[name] and says "Hello, [name]!"
-getAllData       |              				 | return all records [{"id":[id],"name":[name]}]
-removeById		 | id=String					 | remove a record by [id]
-changeNameById   | id=String, changedName=String | query a record by [id] and change the name to [name]
+Request name     |	Type	| Parameter(s) | 	Response					|	Description					
+-----------------|----------|--------------|--------------------------------|------------------------------
+hellos           |	GET 	|  			   | 	 array of Hello Object		| query all record from database and return array of Hello object
+helloByID/{id}|	GET     | id=String  | 		Hello Object 			| query by {name} from database and return a single object Hello 
+helloByName/{name}|	GET     | name=String  | 		array of Hello Object 			| query all the data that has {name} and return an array of Hello object
+hello/new    |	POST	| name=String|	added new name: {name}		| add more Hello people ;)
+hello/edit		 |	PUT		| id=String, name=String | Changed name from {name from database} to {name} query a single Hello object by id and change the name from database to {name}
+hello/{id}/remove|	DELETE	| id=String	| removed: {id}	| delete a Hello person by id
 
 
 ## example
@@ -106,73 +109,54 @@ changeNameById   | id=String, changedName=String | query a record by [id] and ch
 if you try
 
 ```
-http://localhost:8085/newName?name=James
+http://localhost:8080/hellos
 ```
 
 it will show
 
 ```
-added new name: James
+[
+	{
+		id: "59e50a8b77c835e20f0aca1c",
+		name: "Aime"
+	},
+	{
+		id: "59e50a8b77c835e20f0aca1d",
+		name: "James"
+	}
+]
 ```
 
-you may try to add more
+you may try to add more by
 
 ```
-http://localhost:8085/newName?name=Aime
-http://localhost:8085/newName?name=Aime
-http://localhost:8085/newName?name=Aime
-http://localhost:8085/newName?name=Aime
-http://localhost:8085/newName?name=Aime
-http://localhost:8085/newName?name=Alpha
-http://localhost:8085/newName?name=Beta
+http://localhost:8080/hello/new
 ```
 
-then
+with a request body key: name and value: Me (please specify the request to use application/x-www-form-urlencoded)
+
+then it will say
 
 ```
-http://localhost:8085/getAllData
+added new name: Me
 ```
 
-it will show something like this
+If you would like to get a single person data, then
 
 ```
-[{"id":"56a8e0efd4c6b7ab47555ece","name":"James"},{"id":"56a8e10fd4c6b7ab47555ecf","name":"Aime"},{"id":"56a8e14ed4c6b7ab47555ed0","name":"Aime"},{"id":"56a8e150d4c6b7ab47555ed1","name":"Aime"},{"id":"56a8e151d4c6b7ab47555ed2","name":"Aime"},{"id":"56a8e152d4c6b7ab47555ed3","name":"Aime"},{"id":"56a8e7e2d4c68879aea3e96d","name":"Alpha"},{"id":"56a8e7e7d4c68879aea3e96e","name":"Beta"}]
+http://localhost:8080/helloByID/59e50a8b77c835e20f0aca1c
 ```
 
-Oh! how many "Aime" we have!? check!
+will return
 
 ```
-http://localhost:8085/helloToAllByName?name=Aime
+{
+	id: "59e50a8b77c835e20f0aca1c",
+	name: "Aime"
+}
 ```
 
-the return will be
-
-```
-5 people(s) named Aime
-Hello, Aime!
-Hello, Aime!
-Hello, Aime!
-Hello, Aime!
-Hello, Aime!
-```
-
-Hmm.. want to change one of Aime? try!
-
-```
-http://localhost:8085/changeNameById?id=56a8e14ed4c6b7ab47555ed0&changedName=whatever
-```
-
-ha.. now id:56a8e14ed4c6b7ab47555ed0 will change the name to "whatever"
-
-or want to remove one people?
-
-```
-http://localhost:8085/removeById?id=56a8e7e7d4c68879aea3e96e
-```
-
-Byebye Beta ...
-
-(if you use getAllData, you may notice our "Beta" is gone)
+So, you can try other APIs provided above and enjoy adding/deleting/modifying the code ;) will be a lot of fun
 
 # More detail about micro service
 
