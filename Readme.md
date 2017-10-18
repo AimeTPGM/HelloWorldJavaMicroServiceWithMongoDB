@@ -100,7 +100,7 @@ hellos           |	GET 	|  			   | 	 array of Hello Object		| query all record f
 helloByID/{id}|	GET     | id=String  | 		Hello Object 			| query by {name} from database and return a single object Hello 
 helloByName/{name}|	GET     | name=String  | 		array of Hello Object 			| query all the data that has {name} and return an array of Hello object
 hello/new    |	POST	| name=String|	added new name: {name}		| add more Hello people ;)
-hello/edit		 |	PUT		| id=String, name=String | Changed name from {name from database} to {name} query a single Hello object by id and change the name from database to {name}
+hello/edit		 |	PUT		| id=String, name=String | Changed name from {name from database} to {name} | query a single Hello object by id and change the name from database to {name}
 hello/{id}/remove|	DELETE	| id=String	| removed: {id}	| delete a Hello person by id
 
 
